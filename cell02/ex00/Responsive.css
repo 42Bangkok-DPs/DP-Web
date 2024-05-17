@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    font-size: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid #ddd;
+    padding: 200px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cell1 {
+    background-color: #ed48ff;
+}
+.cell2 {
+    background-color: #d8ffc2;
+}

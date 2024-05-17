@@ -1,0 +1,96 @@
+section#contact ul li {
+border: 2px solid #ffc107;
+border-radius: 10px;
+padding: 15px 20px; 
+margin-bottom: 10px;
+display: inline-block;
+width: 250px; 
+text-align: center;
+}
+
+section#skill ul {
+border: 2px solid #ffc107;
+border-radius: 10px;
+padding: 10px 20px;
+display: inline-block;
+}
+
+section#skill ul li {
+font-size: 20px;
+margin-bottom: 5px;
+}
+
+section#contact ul li:not(:last-child) {
+margin-right: 10px;
+}
+
+html {
+    font-size: 30px;
+}
+
+body {
+    background-color: #e294da;
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.navbar a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    margin-right: -3px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: rgb(245, 129, 220);
+}
+
+.profile-image {
+    position: relative;
+    margin-top: -50px;
+    width: 250px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    color: #ffc107;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+section p,
+section ul {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+section img {
+    width: 30px;
+    vertical-align: middle;
+}
+
+section ul li {
+    font-size: 20px;
+}
