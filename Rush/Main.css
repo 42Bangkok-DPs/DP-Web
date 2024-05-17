@@ -1,0 +1,27 @@
+body {
+    text-align: center;
+    background-image: url('image/sky.png'); /* Add your background image URL here */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background */
+}
+.profile {
+    display: inline-block;
+    width: 45%;
+    margin: 10px;
+}
+h1 {
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+}
+p {
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+}
+.grid-responsive {
+display: grid;
+grid-template-columns: auto auto auto auto auto;
+width: 100%;
+padding: 0px;
+}
