@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.title-card {
+    margin: 20px 0px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-content: space-between;
+    width: 320px;
+    height: 500px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.profile-picture {
+    width: 100%;
+    height: 220px;
+    background-image: url('https://media.istockphoto.com/id/160515715/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B9%81%E0%B8%A1%E0%B8%A7%E0%B8%84%E0%B8%B4%E0%B8%95%E0%B8%95%E0%B8%B5%E0%B9%89%E0%B8%82%E0%B8%B5%E0%B9%89%E0%B9%80%E0%B8%A5%E0%B9%88%E0%B8%99.jpg?s=612x612&w=0&k=20&c=hBP9ZxfW03_5cX0uus01wSs4YlA1yoA0bzaxnD52Sl0=');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.infomation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-content: space-between;
+    width: 100%;
+    height: 190px;
+}
+
+.inside-title {
+    margin: 8px 0px;
+    color: #181818;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.inside-detail {
+    margin: 6px 0px;
+    color: #808080;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.inside-location {
+    margin: 8px 0px;
+    color: #181818;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo-box {
+    display: flex;
+}
+
+.logo {
+    height: 36px;
+    margin: 0px 4px;
+}
+
+.btn {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #808080;
+    color: #EAEAEA;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    border: 2px solid #808080;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: #EAEAEA;
+    color: #808080;
+    cursor: pointer;
+}
