@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="balloon.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="balloon" id="balloonColorsChange"></div>
+    
+    <script>
+        document.getElementById("balloonColorsChange").addEventListener("click", function() {
+            var balloon = document.getElementById("balloonColorsChange");
+
+            if (balloon.style.backgroundColor === 'red') {
+                balloon.style.backgroundColor = 'blue';
+            } else if (balloon.style.backgroundColor === 'blue') {
+                balloon.style.backgroundColor = 'green';
+            } else {
+                balloon.style.backgroundColor = 'red';
+            }
+
+            var currentWidth = parseInt(balloon.style.width) || 200;
+            var currentHeight = parseInt(balloon.style.height) || 200;
+
+            if (currentWidth >= 420 && currentHeight >= 420) {
+                balloon.style.width = '200px';
+                balloon.style.height = '200px';
+            } else {
+                balloon.style.width = (currentWidth + 10) + 'px';
+                balloon.style.height = (currentHeight + 10) + 'px';
+            }
+        });
+
+        document.getElementById("balloonColorsChange").addEventListener("mouseleave", function() {
+            var balloon = document.getElementById("balloonColorsChange");
+
+            if (balloon.style.backgroundColor === 'green') {
+                balloon.style.backgroundColor = 'blue';
+            } else if (balloon.style.backgroundColor === 'blue') {
+                balloon.style.backgroundColor = 'red';
+            } else {
+                balloon.style.backgroundColor = 'green';
+            }
+
+            var currentWidth = parseInt(balloon.style.width) || 200;
+            var currentHeight = parseInt(balloon.style.height) || 200;
+
+            if (currentWidth > 200 && currentHeight > 200) {
+                balloon.style.width = (currentWidth - 5) + 'px';
+                balloon.style.height = (currentHeight - 5) + 'px';
+            }
+        });
+    </script>
+</body>
+</html>
