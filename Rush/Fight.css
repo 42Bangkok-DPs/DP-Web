@@ -46,7 +46,7 @@ p {
     text-align: left;
 }
 .navbar {
-    overflow: hidden;
+
     background-color: #333;
     position: fixed;
     top: 0;
