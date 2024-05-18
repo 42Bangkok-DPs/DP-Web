@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon Color and Size Change</title>
+    <style>
+        .balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="balloon" id="balloonColorsChange"></div>
+
+    <script>
+        $(document).ready(function () {
+            function expandBalloon() {
+                var $balloon = $('#balloonColorsChange');
+
+                if ($balloon.css('background-color') === 'rgb(255, 0, 0)') {
+                    $balloon.css('background-color', 'blue');
+                } else if ($balloon.css('background-color') === 'rgb(0, 0, 255)') {
+                    $balloon.css('background-color', 'green');
+                } else {
+                    $balloon.css('background-color', 'red');
+                }
+
+                // console.log($balloon.css('width'), $balloon.css('height'));
+                var currentWidth = parseInt($balloon.css('width'));
+                var currentHeight = parseInt($balloon.css('height'));
+
+                if (currentWidth >= 420 && currentHeight >= 420) {
+                    $balloon.css({ width: '200px', height: '200px' });
+                } else {
+                    $balloon.css({
+                        width: (currentWidth + 10) + 'px',
+                        height: (currentHeight + 10) + 'px'
+                    });
+                }
+            }
+
+            function shrinkBalloon() {
+                var $balloon = $('#balloonColorsChange');
+
+                if ($balloon.css('background-color') === 'rgb(0, 128, 0)') {
+                    $balloon.css('background-color', 'blue');
+                } else if ($balloon.css('background-color') === 'rgb(0, 0, 255)') {
+                    $balloon.css('background-color', 'red');
+                } else {
+                    $balloon.css('background-color', 'green');
+                }
+
+                // console.log($balloon.css('width'), $balloon.css('height'));
+                var currentWidth = parseInt($balloon.css('width'));
+                var currentHeight = parseInt($balloon.css('height'));
+
+                if (currentWidth > 200 && currentHeight > 200) {
+                    $balloon.css({ 
+                        width: (currentWidth - 5) + 'px', 
+                        height: (currentHeight - 5) + 'px' 
+                    });
+                }
+            }
+
+            $('#balloonColorsChange').click(expandBalloon);
+            $('#balloonColorsChange').mouseenter(shrinkBalloon);
+            $('#balloonColorsChange').mouseleave(shrinkBalloon);
+        });
+
+    </script>
+</body>
+
+</html>

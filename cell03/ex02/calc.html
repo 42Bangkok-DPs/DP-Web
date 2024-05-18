@@ -60,7 +60,7 @@
 <body>
     <div class="tool-box">
         <div class="calc-box">
-            <input type="number" id="num1" placeholder="num01" min="0">
+            <input type="text" id="num1" placeholder="num01" min="0">
             <select id="operator">
                 <option value="+">+</option>
                 <option value="-">-</option>
@@ -68,7 +68,7 @@
                 <option value="/">/</option>
                 <option value="%">%</option>
             </select>
-            <input type="number" id="num2" placeholder="num02" min="0">
+            <input type="text" id="num2" placeholder="num02" min="0">
         </div>
         <button id="calculate">Try me</button>
     </div>
@@ -87,9 +87,13 @@
                 alert('Error :(');
                 console.log('Error :(');
                 return;
-            }
-
-            var result;
+        }
+            
+            function isValidPositiveInteger(value) {
+        const num = parseInt(value);
+        return !isNaN(num) && num.toString() === value && num >= 0;
+      }
+      var result;
             switch (operator) {
                 case '+':
                     result = num1 + num2;
@@ -120,8 +124,7 @@
                     alert('Error :(');
                     console.log('Error :(');
                     return;
-            }
-
+                }
             alert('Result: ' + result);
             console.log('Result: ' + result);
         });

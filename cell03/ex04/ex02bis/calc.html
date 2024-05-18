@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .tool-box {
+            display: flex;
+            flex-direction: column;
+            gap: 10x;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+        .calc-box {
+            display: flex;
+            gap: 15px;
+            height: 40px;
+        }
+
+        input {
+            width: 80px;
+            height: 100%;
+            padding: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select {
+            width: 60px;
+            height: 100%;
+            padding: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            height: 30px;
+        }
+    </style>
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="tool-box">
+        <div class="calc-box">
+            <input type="text" id="num01" placeholder="num01" min="0">
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="text" id="num02" placeholder="num02" min="0">
+        </div>
+        <button id="calculate">Try me</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#calculate').click(function () {
+                var num01 = $('#num01').val();
+                var num02 = $('#num02').val();
+                var operator = $('#operator').val();
+
+                for (let i = 0; i < num01.length; i++) {
+                    if (!/[0-9]/.test(num01[i])) {
+                        console.log('Error :(');
+                        return;
+                    }
+                }
+
+                for (let i = 0; i < num02.length; i++) {
+                    if (!/[0-9]/.test(num02[i])) {
+                        console.log('Error :(');
+                        return;
+                    }
+                }
+
+                num01 = Number(num01);
+                num02 = Number(num02);
+
+                var result;
+                switch (operator) {
+                    case '+':
+                        result = num01 + num02;
+                        break;
+                    case '-':
+                        result = num01 - num02;
+                        break;
+                    case '*':
+                        result = num01 * num02;
+                        break;
+                    case '/':
+                        if (num02 === 0) {
+                            alert("It's over 9000!");
+                            return;
+                        }
+                        result = num01 / num02;
+                        break;
+                    case '%':
+                        if (num02 === 0) {
+                            alert("It's over 9000!");
+                            return;
+                        }
+                        result = num01 % num02;
+                        break;
+                    default:
+                        console.log('Error :(');
+                        return;
+                }
+
+                alert('Result: ' + result);
+                console.log('Result: ' + result);
+            });
+
+            setInterval(function () {
+                alert('Please, use me...');
+            }, 30000);
+        });
+    </script>
+</body>
+
+</html>
